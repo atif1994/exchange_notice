@@ -1,7 +1,12 @@
 import 'package:exchange_notice/screen/home_screen.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+import 'networking/getapi/homeget_api.dart';
+
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await GetHomeData.fetchUsers();
+
   runApp(const MyApp());
 }
 
